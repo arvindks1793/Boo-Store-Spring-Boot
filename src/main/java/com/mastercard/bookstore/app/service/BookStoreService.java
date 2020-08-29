@@ -22,6 +22,8 @@ public class BookStoreService implements IBookStoreService {
 	@Autowired
 	BookRepository repository;
 
+	//Method to fetch list of books, we construct the paging and sorting parameters here 
+	//and make a final call to the repository
 	public Map<String, Object> getAllBooks(Integer pageNo, Integer pageSize, String sortBy) {
 		
 		List<Book> books = new ArrayList<Book>();
@@ -42,17 +44,14 @@ public class BookStoreService implements IBookStoreService {
 
 	}
 
-	public boolean isBookExist(int id) {
-
-		return repository.existsById(id);
-	}
-
+	//Method to delete a book identified by its Id
 	public void deleteBookById(int id) {
 
 		repository.deleteById(id);
 
 	}
 
+	//Method to fetch a book identified by its Id
 	public Optional<Book> getBookById(int id) {
 
 		return repository.findById(id);

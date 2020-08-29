@@ -9,8 +9,6 @@ public interface IBookStoreService {
 
 	Map<String, Object> getAllBooks(Integer pageNo, Integer pageSize, String sortBy);
 
-	boolean isBookExist(int id);
-
 	void deleteBookById(int id);
 
 	Optional<Book> getBookById(int id);

@@ -1,7 +1,6 @@
 package com.mastercard.bookstore.app.controller;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -43,7 +42,6 @@ public class BookStoreController {
 	@RequestMapping(value = "books/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Book> deleteBookById(@PathVariable("id") int id) {
 
-		//boolean isBookExist = service.isBookExist(id);
 		Optional<Book> book = service.getBookById(id);
 
 		if (book.isPresent()) {
