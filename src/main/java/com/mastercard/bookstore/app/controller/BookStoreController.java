@@ -61,7 +61,7 @@ public class BookStoreController {
 
 		Optional<Book> book = service.getBookById(id);
 
-		if (book.isPresent()) {
+		if (book != null && book.isPresent()) {
 
 			return ResponseEntity.ok(book.get());
 

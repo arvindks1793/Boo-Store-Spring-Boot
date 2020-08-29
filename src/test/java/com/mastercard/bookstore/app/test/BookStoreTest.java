@@ -58,6 +58,7 @@ public class BookStoreTest {
 		mockMvc = MockMvcBuilders.standaloneSetup(bookStoreController).build();
 	}
 
+	//Test case to check success case for getting the list of books
 	@Test
 	public void test_get_all_success() throws Exception {
 
@@ -84,6 +85,7 @@ public class BookStoreTest {
 		verifyNoMoreInteractions(bookStoreService);
 	}
 
+	//Test case to check the success case for getting a book identified by Id
 	@Test
 	public void test_get_book_by_id_success() throws Exception {
 		Book book = new Book(1, "AThe Testaments", "Fiction", "Margaret Atwood",
@@ -96,7 +98,10 @@ public class BookStoreTest {
 		verify(bookStoreService, times(1)).getBookById(1);
 		verifyNoMoreInteractions(bookStoreService);
 	}
-
+	
+	
+	
+	//Test case to check the success case for deleting a book identified by Id
 	@Test
 	public void test_delete_book_success() throws Exception {
 		Book book = new Book(1, "AThe Testaments", "Fiction", "Margaret Atwood",
