@@ -1,9 +1,12 @@
 package com.mastercard.bookstore.app;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.mastercard.bookstore.app.model.Book;
@@ -27,6 +30,7 @@ public class BookStoreApp implements CommandLineRunner {
 	}
 
 	@Override
+	@Transactional
 	public void run(String... args) throws Exception {
 
 		bookRepo.save(new Book(1, "AThe Testaments", "Fiction", "Margaret Atwood", util.convertStringToDate("21/06/2019")));

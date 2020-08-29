@@ -43,10 +43,10 @@ public class BookStoreController {
 	@RequestMapping(value = "books/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Book> deleteBookById(@PathVariable("id") int id) {
 
-		boolean isBookExist = service.isBookExist(id);
+		//boolean isBookExist = service.isBookExist(id);
+		Optional<Book> book = service.getBookById(id);
 
-		if (isBookExist) {
-
+		if (book.isPresent()) {
 			service.deleteBookById(id);
 			return new ResponseEntity<Book>(HttpStatus.OK);
 
