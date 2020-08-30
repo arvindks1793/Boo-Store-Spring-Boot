@@ -7,7 +7,7 @@ import com.mastercard.bookstore.app.model.Book;
 
 public interface IBookStoreService {
 
-	Map<String, Object> getAllBooks(Integer pageNo, Integer pageSize, String sortBy);
+	Map<String, Object> getAllBooks(Integer pageNo, Integer pageSize, String sortBy,String sortDirection);
 
 	void deleteBookById(int id);
 

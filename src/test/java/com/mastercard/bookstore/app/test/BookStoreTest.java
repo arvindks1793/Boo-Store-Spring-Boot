@@ -77,28 +77,27 @@ public class BookStoreTest {
 		response.put("totalItems", 10);
 		response.put("totalPages", 2);
 
-		when(bookStoreService.getAllBooks(0, 5, "id")).thenReturn(response);
+		when(bookStoreService.getAllBooks(0, 5, "id","asc")).thenReturn(response);
 		mockMvc.perform(get("/books")).andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-				.andExpect(status().isOk()).andExpect(jsonPath("$.totalItems", Matchers.is(10)))
-				.andExpect(jsonPath("$.books", Matchers.hasSize(2))).andExpect(status().isOk());
-		verify(bookStoreService, times(1)).getAllBooks(0, 5, "id");
+		.andExpect(status().isOk()).andExpect(jsonPath("$.totalItems", Matchers.is(10)))
+		.andExpect(jsonPath("$.books", Matchers.hasSize(2))).andExpect(status().isOk());
+		verify(bookStoreService, times(1)).getAllBooks(0, 5, "id","asc");
 		verifyNoMoreInteractions(bookStoreService);
 	}
 
-	//Test case to check the success case for getting a book identified by Id
+	// Test case to check the success case for getting a book identified by Id
 	@Test
 	public void test_get_book_by_id_success() throws Exception {
 		Book book = new Book(1, "AThe Testaments", "Fiction", "Margaret Atwood",
 				util.convertStringToDate("21/06/2019"));
 		when(bookStoreService.getBookById(book.getId())).thenReturn(Optional.of(book));
 		mockMvc.perform(get("/books/{id}", 1)).andExpect(status().isOk())
-				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-				.andExpect(jsonPath("$.id", Matchers.is(1)))
-				.andExpect(jsonPath("$.title", Matchers.is("AThe Testaments")));
+		.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+		.andExpect(jsonPath("$.id", Matchers.is(1)))
+		.andExpect(jsonPath("$.title", Matchers.is("AThe Testaments")));
 		verify(bookStoreService, times(1)).getBookById(1);
 		verifyNoMoreInteractions(bookStoreService);
 	}
-	
 	
 	
 	//Test case to check the success case for deleting a book identified by Id

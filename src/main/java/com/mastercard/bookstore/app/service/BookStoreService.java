@@ -22,36 +22,40 @@ public class BookStoreService implements IBookStoreService {
 	@Autowired
 	BookRepository repository;
 
-	//Method to fetch list of books, we construct the paging and sorting parameters here 
-	//and make a final call to the repository
-	public Map<String, Object> getAllBooks(Integer pageNo, Integer pageSize, String sortBy) {
-		
+	// Method to fetch list of books, we construct the paging and sorting parameters
+	// here and make a final call to the repository
+	public Map<String, Object> getAllBooks(Integer pageNo, Integer pageSize, String sortField, String sortDirection) {
+
 		List<Book> books = new ArrayList<Book>();
 
-		Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
+		// create Object of Sort inorder to pass to Pageable
+		Sort sorting = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending()
+				: Sort.by(sortField).descending();
+
+		Pageable paging = PageRequest.of(pageNo, pageSize, sorting);
 
 		Page<Book> pagedResult = repository.findAll(paging);
-		
+
 		books = pagedResult.getContent();
-		
-		 Map<String, Object> response = new HashMap<>();
-	      response.put("books", books);
-	      response.put("currentPage", pagedResult.getNumber());
-	      response.put("totalItems", pagedResult.getTotalElements());
-	      response.put("totalPages", pagedResult.getTotalPages());
-	     
+
+		Map<String, Object> response = new HashMap<>();
+		response.put("books", books);
+		response.put("currentPage", pagedResult.getNumber());
+		response.put("totalItems", pagedResult.getTotalElements());
+		response.put("totalPages", pagedResult.getTotalPages());
+
 		return response;
 
 	}
 
-	//Method to delete a book identified by its Id
+	// Method to delete a book identified by its Id
 	public void deleteBookById(int id) {
 
 		repository.deleteById(id);
 
 	}
 
-	//Method to fetch a book identified by its Id
+	// Method to fetch a book identified by its Id
 	public Optional<Book> getBookById(int id) {
 
 		return repository.findById(id);
