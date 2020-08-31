@@ -67,6 +67,7 @@ Method name: deleteBookById()
 Resource URI: /books/{id}
 
 Request Type: DELETE
+
 Pathvariable: id
 
 URL for deleteById()
