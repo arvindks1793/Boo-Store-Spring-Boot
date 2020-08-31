@@ -64,8 +64,8 @@ public class BookStoreTest {
 
 		List<Book> books = new ArrayList<Book>();
 
-		Book b1 = new Book(1, "AThe Testaments", "Fiction", "Margaret Atwood", util.convertStringToDate("21/06/2019"));
-		Book b2 = new Book(2, "BStamements", "Fiction", "Margaret Atwood", util.convertStringToDate("21/06/2019"));
+		Book b1 = new Book(1, "The Lord of the Rings", "Fiction", "J.R.R. Tolkien", util.convertStringToDate("20/08/2000"));
+		Book b2 = new Book(2, "Peace Talks", "Fantasy", "Jim Butcher", util.convertStringToDate("14/07/2020"));
 
 		books.add(b1);
 		books.add(b2);
@@ -88,13 +88,12 @@ public class BookStoreTest {
 	// Test case to check the success case for getting a book identified by Id
 	@Test
 	public void test_get_book_by_id_success() throws Exception {
-		Book book = new Book(1, "AThe Testaments", "Fiction", "Margaret Atwood",
-				util.convertStringToDate("21/06/2019"));
+		Book book = new Book(1, "The Lord of the Rings", "Fiction", "J.R.R. Tolkien", util.convertStringToDate("20/08/2000"));
 		when(bookStoreService.getBookById(book.getId())).thenReturn(Optional.of(book));
 		mockMvc.perform(get("/books/{id}", 1)).andExpect(status().isOk())
-		.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+		.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
 		.andExpect(jsonPath("$.id", Matchers.is(1)))
-		.andExpect(jsonPath("$.title", Matchers.is("AThe Testaments")));
+		.andExpect(jsonPath("$.title", Matchers.is("The Lord of the Rings")));
 		verify(bookStoreService, times(1)).getBookById(1);
 		verifyNoMoreInteractions(bookStoreService);
 	}
@@ -103,8 +102,7 @@ public class BookStoreTest {
 	//Test case to check the success case for deleting a book identified by Id
 	@Test
 	public void test_delete_book_success() throws Exception {
-		Book book = new Book(1, "AThe Testaments", "Fiction", "Margaret Atwood",
-				util.convertStringToDate("21/06/2019"));
+		Book book = new Book(1, "The Lord of the Rings", "Fiction", "J.R.R. Tolkien", util.convertStringToDate("20/08/2000"));
 		when(bookStoreService.getBookById(book.getId())).thenReturn(Optional.of(book));
 		doNothing().when(bookStoreService).deleteBookById(book.getId());
 		mockMvc.perform(delete("/books/{id}", book.getId())).andExpect(status().isOk());

@@ -19,16 +19,17 @@ import com.mastercard.bookstore.app.repository.BookRepository;
 @Service
 public class BookStoreService implements IBookStoreService {
 
+	//Autowiring the Book repository to interact with the Databse
 	@Autowired
 	BookRepository repository;
 
-	// Method to fetch list of books, we construct the paging and sorting parameters
+	// Method to fetch list of books,construct the paging and sorting parameters
 	// here and make a final call to the repository
 	public Map<String, Object> getAllBooks(Integer pageNo, Integer pageSize, String sortField, String sortDirection) {
 
 		List<Book> books = new ArrayList<Book>();
 
-		// create Object of Sort inorder to pass to Pageable
+		// create Object of Sort in order to pass to PageRequest
 		Sort sorting = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending()
 				: Sort.by(sortField).descending();
 
