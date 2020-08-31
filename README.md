@@ -116,5 +116,20 @@ Unit Testing: I have used JUnit, Mockito and MockMVC to test all the above RESTf
    
  Using Docker contaoner to rum MySQL Database. I would have defiently coompleted the stretch goal. One of the problems using Docker is the time it takes for the initial set up in the Laptop/Computer and the URLs which can easily get confusing. Next imporvment that I wan to mention is about sorting using multpile fileds. Currently the application supports sorting using all the indiviudal fields independendtly but not in a combined way. I woudl defienlty wan to improve the sorting using multiple fields.
    
-   
+ Steps to start the application:
  
+ Please find the .war (bookstoreservice.war) file in the target folder
+ 
+ Deploy it in Tomcat 
+ 
+ Start the application in Tomcat
+ 
+ Use this URL to get the list of books: http://localhost:8089/bookstoreservice/books
+ 
+ Note:8089 is the port where I have deployed my tomcat.
+ 
+ In case if there is a problem with cross origin:
+ 
+Please note the present in @CrossOrigin annotation in Controller class. Please change its value to the URL of the Angular application.    
+ 
+r
