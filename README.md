@@ -114,7 +114,7 @@ Unit Testing: I have used JUnit, Mockito and MockMVC to test all the above RESTf
    
    Improvements (If had more time):
    
- Using Docker container to run MySQL Database. I would have defiently coompleted the stretch goal if I had a day or two. One of the problems using Docker is the time it takes for the initial set up in the Laptop/Computer and the URLs which can easily get confusing. Next imporvment that I want to mention is about sorting using multpile fileds. Currently the application supports sorting using all the indiviudal fields independendtly but not in a combined way. I would definitely want to implement the sorting using multiple fields.
+ Using Docker container to run MySQL Database. I would have defiently completed the stretch goal if I had a day or two. One of the problems using Docker is the time it takes for the initial set up in the Laptop/Computer and the URLs which can easily get confusing. Next imporvment that I want to mention is about sorting using multpile fileds. Currently the application supports sorting using all the indiviudal fields independendtly but not in a combined way. I would definitely want to implement the sorting using multiple fields.
    
  Steps to start the application:
  
@@ -128,7 +128,6 @@ Unit Testing: I have used JUnit, Mockito and MockMVC to test all the above RESTf
  
  Note:8089 is the port where I have deployed my tomcat.
  
- In case if there is a problem with cross origin:
     
  
 
