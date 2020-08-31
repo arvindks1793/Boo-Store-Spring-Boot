@@ -11,5 +11,5 @@ import com.mastercard.bookstore.app.model.Book;
 
 public interface BookRepository extends PagingAndSortingRepository<Book, Integer> {
 	
-	 Page<Book> findAll(Pageable pageable);
+	 
 }

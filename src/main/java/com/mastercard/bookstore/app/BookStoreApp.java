@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.mastercard.bookstore.app.model.Book;
@@ -13,7 +15,7 @@ import com.mastercard.bookstore.app.util.BookStoreUtil;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackageClasses = {BookRepository.class})
-public class BookStoreApp implements CommandLineRunner {
+public class BookStoreApp extends SpringBootServletInitializer implements CommandLineRunner {
 
 	@Autowired
 	BookRepository bookRepo;
@@ -40,6 +42,12 @@ public class BookStoreApp implements CommandLineRunner {
 		bookRepo.save(new Book(8, "Shielded", "Fantasy", " KayLynn Flanders", util.convertStringToDate("21/07/2020")));
 		bookRepo.save(new Book(9, "Want", "Literary Fiction", " Lynn Steger Strong", util.convertStringToDate("21/06/2019")));
 		bookRepo.save(new Book(10, "Atomic Love", "War", "Jennie Fields", util.convertStringToDate("05/08/2020")));	
+	}
+	
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(BookStoreApp.class);
+
 	}
 
 }

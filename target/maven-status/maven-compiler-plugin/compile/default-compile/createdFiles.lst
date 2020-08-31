@@ -1,0 +1,10 @@
+com\mastercard\bookstore\app\repository\BookRepository.class
+com\mastercard\bookstore\app\util\BookStoreUtil.class
+com\mastercard\bookstore\app\BookStoreApp.class
+com\mastercard\bookstore\app\service\BookStoreService.class
+com\mastercard\bookstore\app\model\Book.class
+com\mastercard\bookstore\app\service\IBookStoreService.class
+com\mastercard\bookstore\app\controller\BookStoreController.class
+com\mastercard\bookstore\app\exception\BookStoreControllerAdvice.class
+com\mastercard\bookstore\app\exception\ExceptionResponse.class
+com\mastercard\bookstore\app\exception\BookNotFoundException.class
