@@ -102,8 +102,10 @@ Unit Testing: I have used JUnit, Mockito and MockMVC to test all the above RESTf
 
  Test Class : BookStorTest.java
   
-   Database: I have used the in-memory H2 Database provided by Spring boot. As advised I have included all the fileds given in the requirement. Book id is the primary key in the table. I have used Spring Data JPA to construct the Database and tables.
+  
+  Database: I have used the in-memory H2 Database provided by Spring boot. As advised I have included all the fileds given in the requirement. Book id is the primary key in the table. I have used Spring Data JPA to construct the Database and tables.
    
+   
    Database Colunmns:
    
    id - Primary key
@@ -117,8 +119,10 @@ Unit Testing: I have used JUnit, Mockito and MockMVC to test all the above RESTf
    Publication Date
    
    Improvements (If had more time):
+   
    
  Using Docker container to run MySQL Database. I would have definitely completed the stretch goal if I had a day or two. One of the problems using Docker is the time it takes for the initial set up in the Laptop/Computer and the URLs which can easily get confusing. Next improvement that I want to mention is about sorting using multiple fields. Currently, the application supports sorting using all the individual fields independently but not in a combined way. I would definitely want to implement the sorting using multiple fields.
+ 
    
  Steps to start the application:
  
