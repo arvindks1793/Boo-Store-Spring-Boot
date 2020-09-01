@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mastercard.bookstore.app.exception.BookListNotFoundException;
 import com.mastercard.bookstore.app.exception.BookNotFoundException;
 import com.mastercard.bookstore.app.model.Book;
 import com.mastercard.bookstore.app.service.BookStoreService;
@@ -34,6 +35,11 @@ public class BookStoreController {
 			throws IOException {
 
 		Map<String, Object> map = service.getAllBooks(pageNo, pageSize, sortBy, sortDirection);
+		
+		if(map.isEmpty()) {
+			
+			throw new BookListNotFoundException("Books List unable to be fetched");
+		}
 
 		return new ResponseEntity<Map<String, Object>>(map, new HttpHeaders(), HttpStatus.OK);
 
@@ -44,7 +50,7 @@ public class BookStoreController {
 	public ResponseEntity<Book> deleteBookById(@PathVariable("id") int id) {
 		
 		Optional<Book> book = service.getBookById(id);
-		if (book.isPresent()) {
+		if (book != null && book.isPresent()) {
 			service.deleteBookById(id);
 			return new ResponseEntity<Book>(HttpStatus.OK);
 		} else {
