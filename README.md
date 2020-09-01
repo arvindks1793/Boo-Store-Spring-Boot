@@ -35,7 +35,7 @@ The method returns the Response code as 200 and Response status OK for success.
 
 2.	To get a book using id:
 
-Method name: getABookById()
+Method name: getBookById()
 
 Resource URI: /books/{id}
 
