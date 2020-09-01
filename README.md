@@ -110,13 +110,19 @@ Unit Testing: I have used JUnit, Mockito and MockMVC to test all the above RESTf
    
    id - Primary key
    
+   
    Title
+   
    
    AuthornName
+   
    
    Category
+   
    
    Publication Date
+   
+   
    
    Improvements (If had more time):
    
