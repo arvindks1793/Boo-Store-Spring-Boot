@@ -131,14 +131,23 @@ Unit Testing: I have used JUnit, Mockito and MockMVC to test all the above RESTf
  
    
  Steps to start the application:
+ 
+ 
  
  Please find the .war (bookstoreservice.war) file in the target folder
+ 
+ 
  
  Deploy it in Tomcat 
+ 
+ 
  
  Start the application in Tomcat
+ 
  
  Use this URL to get the list of books: http://localhost:8089/bookstoreservice/books
+ 
+ 
  
  Note:8089 is the port where I have deployed my tomcat.
  
