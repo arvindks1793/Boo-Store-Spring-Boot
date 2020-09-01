@@ -73,6 +73,8 @@ Response Status: “Book with the id is not found”
 
  If a resource is not found, the method throws ‘BookNotFoundException’ (RuntimeException) and the exception is handled using the @ControllerAdvice which sends the corresponding error message.
  
+
+
 3.	To delete a Book using id:
 
 Method name: deleteBookById()
@@ -147,7 +149,7 @@ Unit Testing: I have used JUnit, Mockito and MockMVC to test all the above RESTf
    Improvements (If had more time):
    
    
- Using Docker container to run MySQL Database. I would have definitely completed the stretch goal if I had a day or two. One of the problems using Docker is the time it takes for the initial set up in the Laptop/Computer and the URLs which can easily get confusing. Next improvement that I want to mention is about sorting using multiple fields. Currently, the application supports sorting using all the individual fields independently but not in a combined way. I would definitely want to implement the sorting using multiple fields.
+ Using Docker container to run MySQL Database. I would have definitely completed the stretch goal if I had a day or two. One of the problems using Docker is the time it takes for the initial set up in the Laptop/Computer and the URLs which can easily get confusing. Next improvement that I want to mention is about sorting using multiple fields. Currently, the application supports sorting using all the individual fields independently but not in a combined way. I would definitely want to implement the sorting using multiple fields. I would also want to add Swagger API to the application, so that the documentation lives with the application. 
  
    
  Steps to start the application:
