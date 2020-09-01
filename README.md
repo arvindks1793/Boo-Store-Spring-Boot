@@ -34,6 +34,7 @@ The Back-end application exposes three RESTful API end points for the clients to
 The bookRepository extends PagingAndSorting repository which enables Pagination and Sorting in the server side. These parameters are optional and have a default value if the URL does not contain them.
 
 URLs for getAllBook ():
+
 1)	http://localhost:8089/bookstoreservice/books
 2)	http://localhost:8089/bookstoreservice/books?pageSize=5
 3)	http://localhost:8089/bookstoreservice/books?pageSize=5&pageNo=0
