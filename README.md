@@ -15,11 +15,19 @@ The Back-end application exposes three RESTful API end points for the clients to
 
 1.	To get the list of Books:
 
+
+
      Method name: getAllBooks()
+     
+     
      
      Resource URI: /books
+     
+     
      
      Request Type: GET
+     
+     
      
      RequestParams:  pageNo(Page Number), pageSize, sortBy and sortDirection
 
