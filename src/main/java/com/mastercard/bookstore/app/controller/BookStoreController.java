@@ -20,7 +20,7 @@ import com.mastercard.bookstore.app.model.Book;
 import com.mastercard.bookstore.app.service.BookStoreService;
 
 @RestController
-@CrossOrigin("http://localhost:4054")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class BookStoreController {
 
 	@Autowired

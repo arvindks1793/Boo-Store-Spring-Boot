@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.mastercard.bookstore.app.test.BookStoreTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.436 s - in com.mastercard.bookstore.app.test.BookStoreTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.162 s - in com.mastercard.bookstore.app.test.BookStoreTest
